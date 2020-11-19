@@ -12,13 +12,11 @@ function memo(fn) {
 
     else {
           if (counter.length < 2) {
-            console.log('Вычислено');
             let result = fn.apply(null,arguments);
             cache[args] = result;
             return result;
           }
           else if (counter.length >= 2)  {
-            console.log('Вычислено');
             delete cache[del]
             let result = fn.apply(null,arguments);
             cache[args] = result;
@@ -33,12 +31,3 @@ function multi(a,b) {
 }
 const memSum = memo(multi);
 
-console.log(memSum(9,3));
-console.log(memSum(2,3));
-console.log(memSum(9,3));
-console.log(memSum(7,3));
-console.log(memSum(2,3));
-console.log(memSum(10,3));
-console.log(memSum(1,3));
-console.log(memSum(1,3));
-console.log(memSum(13,2))
